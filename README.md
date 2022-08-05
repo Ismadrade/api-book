@@ -7,7 +7,7 @@
 </div>
 
 # Minha Terceira API usando Gin - Go Lang
-Pequena API desenvolvido em Go Lang e a biblioteca Gin, que permite criar, consultar, editar e deletar um livro.
+Pequena API desenvolvido em Go Lang junto com a biblioteca Gin e autenticação com Jwt, que permite criar, consultar, editar e deletar um livro.
 
 ## Requisitos
 
@@ -34,22 +34,32 @@ Dentro da pasta raiz, rodar o seguinte comando:
 go run main.go  
 ```
 O projeto estará rodando em localhost na porta 5000
-```http request
+```
 http://localhost:5000/
 ```
 
+Vale ressaltar que para acessar os endpoints de book, você devera gerar um token no endpoint abaixo:
+
+```
+http://localhost:5000/api/v1/users/login
+```
+
+Obs: Para criar um usuario, utilize seu respectivo endpoint conforme as requisições do Postman.
 ## Endpoints
 
+<b><span style="color:yellow"> POST</span></b> `http://localhost:5000/api/v1/users`
 
-<b><span style="color:green"> GET</span></b> `http://localhost:5000/books`
+<b><span style="color:yellow"> POST</span></b> `http://localhost:5000/api/v1/users/login`
 
-<b><span style="color:green"> GET</span></b> `http://localhost:5000/books/1`
+<b><span style="color:green"> GET</span></b> `http://localhost:5000/api/v1/books`
 
-<b><span style="color:yellow"> POST</span></b> `http://localhost:5000/books`
+<b><span style="color:green"> GET</span></b> `http://localhost:5000/api/v1/books/1`
 
-<b><span style="color:blue"> PUT</span></b> `http://localhost:5000/books`
+<b><span style="color:yellow"> POST</span></b> `http://localhost:5000/api/v1/books`
 
-<b><span style="color:red"> DELETE</span></b> `http://localhost:5000/books/1`
+<b><span style="color:blue"> PUT</span></b> `http://localhost:5000/api/v1/books`
+
+<b><span style="color:red"> DELETE</span></b> `http://localhost:5000/api/v1/books/1`
 
 ## POSTMAN
 
