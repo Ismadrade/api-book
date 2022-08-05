@@ -45,6 +45,7 @@ http://localhost:5000/api/v1/users/login
 ```
 
 Obs: Para criar um usuario, utilize seu respectivo endpoint conforme as requisições do Postman.
+
 ## Endpoints
 
 <b><span style="color:yellow"> POST</span></b> `http://localhost:5000/api/v1/users`
