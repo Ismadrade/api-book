@@ -2,13 +2,18 @@ package routes
 
 import (
 	"github.com/Ismadrade/api-book/controllers"
+	"github.com/Ismadrade/api-book/server/middlewares"
 	"github.com/gin-gonic/gin"
 )
 
 func ConfigRoutes(router *gin.Engine) *gin.Engine {
 	main := router.Group("api/v1")
 	{
-		books := main.Group("books")
+		user := main.Group("users")
+		{
+			user.POST("/", controllers.CreateUser)
+		}
+		books := main.Group("books", middlewares.Auth())
 		{
 			books.GET("/", controllers.ShowAllBooks)
 			books.GET("/:id", controllers.ShowBook)
@@ -16,6 +21,7 @@ func ConfigRoutes(router *gin.Engine) *gin.Engine {
 			books.PUT("/", controllers.EditBook)
 			books.DELETE("/:id", controllers.DeleteBook)
 		}
+		main.POST("login", controllers.Login)
 	}
 	return router
 }

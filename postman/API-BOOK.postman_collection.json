@@ -30,11 +30,14 @@
 		{
 			"name": "CREATE A BOOK",
 			"request": {
+				"auth": {
+					"type": "noauth"
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Livro 1\",\r\n    \"description\": \"Um livro qualquer\",\r\n    \"medium_price\": 199.99,\r\n    \"author\": \"Um altor qualquer\",\r\n    \"img_url\": \"http://www.umaimagemqualquer.com.br/umaimagemqualquer.png\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Livro 1\",\r\n    \"description\": \"Um livro qualquer\",\r\n    \"medium_price\": 199.99,\r\n    \"author\": \"Um autor qualquer\",\r\n    \"img_url\": \"http://www.umaimagemqualquer.com.br/umaimagemqualquer.png\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -127,6 +130,66 @@
 						"v1",
 						"books",
 						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE A USER",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Joao\",\r\n    \"email\": \"joao@email.com\",\r\n    \"password\": \"123456\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOGIN",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"joao@email.com\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"login"
 					]
 				}
 			},
